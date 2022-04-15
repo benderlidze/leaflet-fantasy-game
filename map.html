@@ -77,13 +77,12 @@
         }).addTo(map)
 
         L.control.zoom({ position: 'topright' }).addTo(map);
-        const label = L.marker(rc.unproject([img.x / 2, img.y / 2])).addTo(map)
+        // const label = L.marker(rc.unproject([img.x / 2, img.y / 2])).addTo(map)
 
         map.on("click", e => {
             const c = rc.project(e.latlng);
             console.log('c', e.latlng, c);
             const { x, y } = c
-
             drawPoly.push(c)
         })
 
