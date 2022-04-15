@@ -36,6 +36,7 @@
     <div id='map'></div>
     <script>
 
+        const drawPoly = [];
         //for development only 
         const mainData = {
             data: {},
@@ -50,7 +51,7 @@
         var map = L.map('map', {
             // crs: L.CRS.Simple,
             maxZoom: 5,
-            minZoom: 2,
+            minZoom: 3,
             zoomControl: false,
             //preferCanvas: true,
             noWrap: true,
@@ -82,11 +83,63 @@
             const c = rc.project(e.latlng);
             console.log('c', e.latlng, c);
             const { x, y } = c
+
+            drawPoly.push(c)
+        })
+
+
+        fetch("data/data.json").then(data => data.json()).then(json => {
+            console.log('json', json);
+            //TOWNS
+            json.towns.forEach(town => {
+                drawPolygon({
+                    coords: town.polygon,
+                    data: town
+                })
+            })
         })
 
         function unproject(arr) {
             const { lat, lng } = rc.unproject(arr)
             return [lng, lat]
+        }
+
+
+        function drawPolygon({ coords, color = "white", dashArray = false, data }) {
+
+            const popupContent = `
+            <h1>${data.name}</h1>
+                <div class="type">
+                    Type: ${data.type}
+                </div>
+                <div class="type">
+                    Info: ${data.info}
+                </div>
+                `
+
+            const unpCoords = coords.map(c => {
+                return rc.unproject([c.x, c.y])
+            })
+
+            const polygon = L.polygon(unpCoords, {
+                color,
+                "fillOpacity": 0,
+                dashArray: dashArray ? '5,10' : '',
+                "opacity": 0.6
+            });
+
+            polygon.on('click', function (e) {
+                console.log('e', e, data);
+
+
+                L.popup()
+                    .setLatLng(e.latlng)
+                    .setContent(popupContent)
+                    .openOn(map);
+            });
+
+            polygon.addTo(map);
+            return polygon;
         }
 
     </script>
