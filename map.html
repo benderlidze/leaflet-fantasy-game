@@ -214,6 +214,7 @@
             "City": caveGroup,
         };
 
+
         // create the map
         var map = L.map('map', {
             // crs: L.CRS.Simple,
@@ -233,6 +234,13 @@
             rc.unproject([1, img.y], 8),
             rc.unproject([img.x, 1], 8)
         );
+
+
+        const imageUrl = 'img/icons/hippo.png'
+        const imageBounds = [[1147, 928], [1584, 1211]].map(i => unproject(i).reverse())
+
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+        L.imageOverlay(imageUrl, imageBounds).bringToFront();
 
 
         // assign map and image dimensions
