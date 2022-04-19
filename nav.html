@@ -36,7 +36,7 @@
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 1;
+            z-index: 10;
             top: 0;
             left: 0;
             background-color: #111;
@@ -158,6 +158,29 @@
             padding: 5px;
             width: 320px;
         }
+
+        .leaflet-left {
+            left: 60px;
+        }
+
+        #menu-icon {
+            position: relative;
+            width: 40px;
+            top: 10px;
+            left: 20px;
+            z-index: 5;
+            border: 2px solid rgba(0, 0, 0, 0.4);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            display: block;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+
+        /* .leaflet-control-layers-toggle{
+            background-image: url(img/MP\ Logo\ Star.svg);
+        } */
     </style>
 </head>
 
@@ -166,21 +189,20 @@
     <div id="sideNavigation" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#dialog_about">Home</a>
-
     </div>
 
-    <nav class="topnav">
-        <a href="#" onclick="openNav()">
-            <svg width="20" height="20" id="icoOpen">
-                <path d="M0,3 20,3" stroke="#000" stroke-width="3" />
-                <path d="M0,10 20,10" stroke="#000" stroke-width="3" />
-                <path d="M0,17 20,17" stroke="#000" stroke-width="3" />
-            </svg>
-        </a>
-        <div class="topnav_title"> <span>Mythical Penguins Map</span> </div>
-    </nav>
+
+
 
     <div id="main">
+        <nav class="topnav">
+            <div class="topnav_title"> <span>Mythical Penguins Map</span> </div>
+        </nav>
+        <div style="position: absolute;">
+            <a href="#" id="menu-icon" onclick="openNav()">
+                <img src="img/MP Logo Star.svg" alt="" style="width: 40px;height:40px;">
+            </a>
+        </div>
         <div id='map'></div>
     </div>
 
@@ -219,16 +241,18 @@
             rc.unproject([img.x, 1], 8)
         );
 
-        var caveGroup = L.layerGroup([]);
+        var town = L.layerGroup([]);
+        var boss = L.layerGroup([]);
+        var city = L.layerGroup([]);
+
         var overlayMaps = {
-            "<img src='img/icons/hippo.png' width='10' height='10'> Town": caveGroup,
-            "Boss": caveGroup,
-            "City": caveGroup,
+            // "<img src='img/icons/hippo.png' width='10' height='10'> Town": caveGroup,
+            "Towns": town,
+            "Bosses": boss,
+            "Cities": city,
         };
 
-
         //L.imageOverlay(imageUrl, imageBounds).bringToFront();
-
 
         // assign map and image dimensions
         map.setView(rc.unproject([img.x / 2, img.y / 2]), 2)
@@ -241,7 +265,7 @@
         }).addTo(map)
 
         L.control.zoom({ position: 'topright' }).addTo(map);
-        L.control.layers({},
+        const layers = L.control.layers({},
             overlayMaps,
             { collapsed: true, position: 'topleft' }).addTo(map);
 
@@ -253,12 +277,6 @@
             const { x, y } = c
             drawPoly.push(c)
         })
-
-        //ICONS PART
-        const imageUrl = 'img/icons/hippo.png'
-        const imageBounds = [[1147, 928], [1584, 1211]].map(i => unproject(i).reverse())
-        var boss = L.imageOverlay(imageUrl, imageBounds).addTo(map)
-        caveGroup.addLayer(boss)
 
 
         fetch("data/data.json").then(data => data.json()).then(json => {
@@ -280,6 +298,23 @@
 
         function drawPolygon({ coords, color = "white", dashArray = false, data }) {
 
+            console.log('data', data.type,);
+            if (!data.iconCoords) return;
+            const imageUrl = data.icon
+            const imageBounds = data.iconCoords.map(i => unproject(i).reverse())
+            var icon = L.imageOverlay(imageUrl, imageBounds)
+
+            if (data.type.toLowerCase() === 'boss') {
+                boss.addLayer(icon).addTo(map)
+            }
+            if (data.type.toLowerCase() === 'city') {
+                city.addLayer(icon).addTo(map)
+            }
+            if (data.type.toLowerCase() === 'town') {
+                town.addLayer(icon).addTo(map)
+            }
+
+
             const popupContent = `
             <h1>${data.name}</h1>
                 <div class="type">
@@ -297,7 +332,7 @@
                 color,
                 "fillOpacity": 0,
                 dashArray: dashArray ? '5,10' : '',
-                "opacity": 0.1
+                "opacity": 0
             });
 
             polygon.on('click', function (e) {

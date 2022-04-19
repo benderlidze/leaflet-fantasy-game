@@ -2,8 +2,13 @@
   "towns": [
     {
       "name": "Hippo",
-      "type": "Town short description",
+      "type": "boss",
       "info": "some info",
+      "iconCoords": [
+        [1147, 910],
+        [1589, 1223]
+      ],
+      "icon": "img/icons/hippo.png",
       "polygon": [
         { "x": 1155.9999999999995, "y": 1204.0000000000018 },
         { "x": 1205, "y": 1108.000000000001 },
@@ -25,7 +30,12 @@
     },
     {
       "name": "Casle",
-      "type": "Town short description",
+      "type": "city",
+      "iconCoords": [
+        [2976, 3164],
+        [3506, 3720]
+      ],
+      "icon": "img/icons/city7.png",
       "info": "some info",
       "polygon": [
         { "x": 3092, "y": 3204 },
@@ -40,7 +50,12 @@
 
     {
       "name": "Bug",
-      "type": "Town short description",
+      "type": "boss",
+      "iconCoords": [
+        [2012, 3341],
+        [2424, 3555]
+      ],
+      "icon": "img/icons/boss5.png",
       "info": "some info",
       "polygon": [
         { "x": 2032, "y": 3536 },
@@ -61,9 +76,14 @@
       ]
     },
     {
-      "name": "City",
-      "type": "Town short description",
+      "name": "City1",
+      "type": "city",
       "info": "some info",
+      "iconCoords": [
+        [1442, 2305],
+        [1995, 2776]
+      ],
+      "icon": "img/icons/city6.png",
       "polygon": [
         { "x": 1509, "y": 2642.0000000000005 },
         { "x": 1596, "y": 2585.9999999999995 },
@@ -83,8 +103,13 @@
     },
     {
       "name": "Town1",
-      "type": "Town short description",
+      "type": "town",
       "info": "some info",
+      "iconCoords": [
+        [1122, 512],
+        [1490, 778]
+      ],
+      "icon": "img/icons/city1.png",
       "polygon": [
         { "x": 1194, "y": 773.9999999999982 },
         { "x": 1109.9999999999995, "y": 636.9999999999986 },
@@ -97,8 +122,13 @@
     },
     {
       "name": "City2",
-      "type": "Town short description",
+      "type": "city",
       "info": "some info",
+      "iconCoords": [
+        [3024, 568],
+        [3448, 919]
+      ],
+      "icon": "img/icons/city2.png",
       "polygon": [
         { "x": 3028, "y": 879.9999999999995 },
         { "x": 3037, "y": 799.0000000000005 },
@@ -113,8 +143,13 @@
     },
     {
       "name": "Boss2",
-      "type": "Town short description",
+      "type": "boss",
       "info": "some info",
+      "iconCoords": [
+        [2240, 556],
+        [2606, 948]
+      ],
+      "icon": "img/icons/boss.png",
       "polygon": [
         { "x": 2253, "y": 820.9999999999964 },
         { "x": 2286, "y": 738.0000000000018 },
@@ -130,9 +165,14 @@
       ]
     },
     {
-      "name": "Town3",
-      "type": "Town short description",
+      "name": "Town11113",
+      "type": "town",
       "info": "some info",
+      "iconCoords": [
+        [3850, 1052],
+        [4207, 1188]
+      ],
+      "icon": "img/icons/city3.png",
       "polygon": [
         { "x": 3862, "y": 1186.9999999999995 },
         { "x": 3878, "y": 1144.9999999999995 },
@@ -145,9 +185,14 @@
       ]
     },
     {
-      "name": "Town3",
-      "type": "Town short description",
+      "name": "Town3333",
+      "type": "town",
       "info": "some info",
+      "iconCoords": [
+        [2755, 1603],
+        [3091, 1707]
+      ],
+      "icon": "img/icons/city4.png",
       "polygon": [
         { "x": 2778, "y": 1700.9999999999977 },
         { "x": 2769, "y": 1646.9999999999995 },
@@ -161,7 +206,12 @@
     },
     {
       "name": "Boss3",
-      "type": "Town short description",
+      "type": "boss",
+      "iconCoords": [
+        [4007, 1524],
+        [4298, 1825]
+      ],
+      "icon": "img/icons/boss4.png",
       "info": "some info",
       "polygon": [
         { "x": 4018, "y": 1795 },
@@ -179,8 +229,13 @@
     },
     {
       "name": "City123",
-      "type": "Town short description",
+      "type": "city",
       "info": "some info",
+      "iconCoords": [
+        [4024, 3344],
+        [4280, 3489]
+      ],
+      "icon": "img/icons/city8.png",
       "polygon": [
         { "x": 2942, "y": 2376.999999999999 },
         { "x": 2942, "y": 2233.999999999999 },
@@ -191,9 +246,31 @@
       ]
     },
     {
-      "name": "City123",
-      "type": "Town short description",
+      "name": "City",
+      "type": "town",
       "info": "some info",
+      "iconCoords": [
+        [2925, 1909],
+        [3672, 2384]
+      ],
+      "icon": "img/icons/city5.png",
+      "polygon": [
+        { "x": 4040, "y": 3492 },
+        { "x": 4040, "y": 3428 },
+        { "x": 4140, "y": 3340 },
+        { "x": 4276, "y": 3428 },
+        { "x": 4284, "y": 3496 }
+      ]
+    },
+    {
+      "name": "City mounts",
+      "type": "town",
+      "info": "some info",
+      "iconCoords": [
+        [2240, 556],
+        [2606, 948]
+      ],
+      "icon": "img/icons/boss.png",
       "polygon": [
         { "x": 4032, "y": 3476 },
         { "x": 4037, "y": 3425 },
@@ -205,8 +282,13 @@
     },
     {
       "name": "Boss123",
-      "type": "Town short description",
+      "type": "boss",
       "info": "some info",
+      "iconCoords": [
+        [3823, 534],
+        [4093, 914]
+      ],
+      "icon": "img/icons/boss2.png",
       "polygon": [
         { "x": 3893, "y": 837.0000000000027 },
         { "x": 3912, "y": 814.9999999999955 },
