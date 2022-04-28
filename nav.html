@@ -166,6 +166,8 @@
         #menu-icon {
             position: relative;
             width: 40px;
+            height: 40px;
+            padding: 2px;
             top: 10px;
             left: 20px;
             z-index: 5;
@@ -314,11 +316,13 @@
 
             const popupContent = `
             <h1>${data.name}</h1>
+               
                 <div class="type">
-                    Type: ${data.type}
+                     <b>${data.biome}</b>
                 </div>
+               
                 <div class="type">
-                    Info: ${data.info}
+                    ${data.info}
                 </div>
                 `
             const unpCoords = coords.map(c => {

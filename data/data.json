@@ -1,9 +1,10 @@
 {
   "towns": [
     {
-      "name": "Hippo",
+      "name": "Kudan: Beast of Glutton",
       "type": "boss",
-      "info": "some info",
+      "info": "Once every two or three months, giant footprints are left on the sand, leaving the townsfolk scratching their heads on just what beast could have left these in the sand. Mysteriously, a few days after the footprints are left, there is a lack of fish and other animals by the shore.",
+      "biome": "Seaside",
       "iconCoords": [
         [1147, 910],
         [1589, 1223]
@@ -29,14 +30,15 @@
       ]
     },
     {
-      "name": "Casle",
+      "name": "Asal",
       "type": "city",
+      "biome": "Forest",
       "iconCoords": [
         [2976, 3164],
         [3506, 3720]
       ],
       "icon": "img/icons/city7.png",
-      "info": "some info",
+      "info": "Asal is the biggest city in Eredet, and its prosperity shows that. Along the roads of Asal, there are bustling shops and homes with families coming in and out. The residents of the city are educated and focus on their fighting skills, so they can hunt the animals and monsters that live outside the 10 meter high walls. The city lord is well praised; crimes have been at their lowest in a decade, and even the poorest have a roof over their head.",
       "polygon": [
         { "x": 3092, "y": 3204 },
         { "x": 3000, "y": 3472 },
@@ -49,14 +51,15 @@
     },
 
     {
-      "name": "Bug",
+      "name": "Chrob: Monstrous Pincer",
       "type": "boss",
       "iconCoords": [
         [2012, 3341],
         [2424, 3555]
       ],
+      "biome": "Forest",
       "icon": "img/icons/boss5.png",
-      "info": "some info",
+      "info": "For over a century, children in Asal and Drawt were warned to not come near the cave deep in the woods. Rumors say that dozens of people have gone in as humans, and came out as insects. Whether it is just a rumor or the truth, no one knows for sure..",
       "polygon": [
         { "x": 2032, "y": 3536 },
         { "x": 2032, "y": 3495 },
@@ -76,9 +79,10 @@
       ]
     },
     {
-      "name": "City1",
+      "name": "Boltic",
       "type": "city",
-      "info": "some info",
+      "biome": "Seaside",
+      "info": "For generations, the city folk of Boltic have been fishermen by trade. Every day, hundreds of pounds of fish and shellfish are harvested from the Solstice river. Twice a year, a festival is held to celebrate the great river that they live off of. Every few days, a ship from Kora town sails from the north of the river, bringing in more people and festivities.",
       "iconCoords": [
         [1442, 2305],
         [1995, 2776]
@@ -102,9 +106,10 @@
       ]
     },
     {
-      "name": "Town1",
+      "name": "Kora",
       "type": "town",
-      "info": "some info",
+      "biome": "Seaside",
+      "info": "Further north from Boltic, a small settlement of Boltic migrators settled down in a small town. The sea animals in this part of the river are different from the ones that are normally found near Boltic city. Twice a year, many residents in this town travel downstream to Boltic to celebrate the festival of Solstice.",
       "iconCoords": [
         [1122, 512],
         [1490, 778]
@@ -121,9 +126,10 @@
       ]
     },
     {
-      "name": "City2",
+      "name": "Gora",
       "type": "city",
-      "info": "some info",
+      "biome":"Forest",
+      "info": "Up the side of the okodai mountain range, a city was built that housed tens of thousands. The steep cliffs were only habitable to birds and a few mountain goats, which were what the city relied on for commerce. Gora was known for its beautiful view of the land of Eredet, and if you looked hard enough, you could see the shore of the solstice.",
       "iconCoords": [
         [3024, 568],
         [3448, 919]
@@ -142,9 +148,10 @@
       ]
     },
     {
-      "name": "Boss2",
+      "name": "Forest of Ashes - Flauros",
+      "biome":"Forest",
       "type": "boss",
-      "info": "some info",
+      "info": "The demon of fire. Legends say that one of his claws was strong enough to break a metal sword in half. His shouts would cause the air to tremble. His breath could melt the armor of the soldiers sent to fight him. The very first demon sealed away thousands of years ago, not before burning down a few cities. A demon, sealed no longer, will burn Eredet to ashes if not stopped.",
       "iconCoords": [
         [2240, 556],
         [2606, 948]
@@ -165,9 +172,10 @@
       ]
     },
     {
-      "name": "Town11113",
+      "name": "Kaln",
+      "biome":"Mountainous",
       "type": "town",
-      "info": "some info",
+      "info": "Next to the base of the Okodai mountain range, Kaln town was built to regulate trade with Eredet’s neighbors. Within the mountain, many workers dug up ores to provide the majority of metal to Eredet. This town wasn’t very favorable to live in, but if you needed the money, working in Kaln was guaranteed to cover living expenses.",
       "iconCoords": [
         [3850, 1052],
         [4207, 1188]
@@ -185,9 +193,10 @@
       ]
     },
     {
-      "name": "Town3333",
+      "name": "Kaln",
       "type": "town",
-      "info": "some info",
+      "biome": "Forest",
+      "info": "Set up right next to the mystical trees, the townsfolk here are carpenters by trade. They shape the wood to the right shape and send it along to Beret. Legends say that the hills that the trees grow on was once the territory of a giant tree monster that made the land around it barren",
       "iconCoords": [
         [2755, 1603],
         [3091, 1707]
@@ -205,14 +214,15 @@
       ]
     },
     {
-      "name": "Boss3",
+      "name": "Ancur: The Hill’s Giant",
+      "biome":"Hillside",
       "type": "boss",
       "iconCoords": [
         [4007, 1524],
         [4298, 1825]
       ],
       "icon": "img/icons/boss4.png",
-      "info": "some info",
+      "info": "During a thunderstorm 50 years ago, the citizens of Beret claimed that they once heard a roar from deep in the woods that was louder than thunder. When they went to investigate, they didn't see anything but the shattered remains of trees and broken stone. Next to the debris laid some burnt patches of fur, much too big for any animal in the area.",
       "polygon": [
         { "x": 4018, "y": 1795 },
         { "x": 4041, "y": 1658.000000000001 },
@@ -228,9 +238,10 @@
       ]
     },
     {
-      "name": "City123",
+      "name": "Beret",
       "type": "city",
-      "info": "some info",
+      "biome": "Hillside Forest",
+      "info": "The trees in the hills near this town contain magical properties. These logs of wood are sturdier than regular trees, and even when they break, if you give it a couple of days and some sunlight, they repair themselves to the way they were. Along with these trees, The residents also tailor furs to sell throughout Eredet.",
       "iconCoords": [
         [4024, 3344],
         [4280, 3489]
@@ -263,9 +274,10 @@
       ]
     },
     {
-      "name": "City mounts",
+      "name": "Drawt",
       "type": "town",
-      "info": "some info",
+      "biome": "Mountainous",
+      "info": "Taking advantage of the commerce in Asal, Drawt town was founded by adventurers that wanted a place to trade and rest during their hunts. Merchants spend a lot of time and money in Drawt, hoping to make a profit by selling in Gora.",
       "iconCoords": [
         [2240, 556],
         [2606, 948]
@@ -281,9 +293,10 @@
       ]
     },
     {
-      "name": "Boss123",
+      "name": "Igel: The Flying Terror",
       "type": "boss",
-      "info": "some info",
+      "biome":"Mountainous",
+      "info": "The townsfolk in Kaln town sometimes would see a shadow fly past their heads, but when they looked up to see what it was, it was already gone. Every so often, children playing by the mountains would come back to the village with a beautiful light blue feather. This feather was incredibly sturdy and became a coveted item for the townswomen.",
       "iconCoords": [
         [3823, 534],
         [4093, 914]
