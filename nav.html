@@ -6,13 +6,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" />
+
     <script src="js/coords.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script src="js/buffer.js"></script>
+
+    <script src="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.css" />
+
     <style>
         body {
             padding: 0;
@@ -179,6 +183,10 @@
             background-color: white;
         }
 
+        h1 {
+            padding: 0px;
+            margin: 0px;
+        }
 
         /* .leaflet-control-layers-toggle{
             background-image: url(img/MP\ Logo\ Star.svg);
@@ -317,7 +325,8 @@
             const popupContent = `
             <h1>${data.name}</h1>
                 <div class="type">
-                     <b>${data.biome}</b>
+                     <div><b style="text-transform: capitalize;">${data.type}</b></div>
+                     <div><b>${data.biome}</b></div>
                 </div>
                 <div class="type">
                     ${data.info}
@@ -334,17 +343,18 @@
                 "opacity": 0
             });
 
-            polygon.on('click', function (e) {
-                console.log('e', e, data);
+            // polygon.on('click', function (e) {
+            //     console.log('e', e, data);
+            //     L.popup()
+            //     .setLatLng(e.latlng)
+            //     .setContent(popupContent)
+            //     .openOn(map);
+            // });
 
-
-                L.popup()
-                    .setLatLng(e.latlng)
-                    .setContent(popupContent)
-                    .openOn(map);
-            });
-
+            var popup = L.responsivePopup().setContent(popupContent).openPopup();
+            polygon.bindPopup(popup);
             polygon.addTo(map);
+
             return polygon;
         }
 
