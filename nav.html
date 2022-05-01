@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.css" />
 
     <style>
+        @font-face {
+            font-family: dragon;
+            src: url("fonts/HouseOfTheDragon_PERSONAL_USE_ONLY.otf") format("opentype");
+        }
+
         body {
             padding: 0;
             margin: 0;
@@ -191,6 +196,46 @@
         /* .leaflet-control-layers-toggle{
             background-image: url(img/MP\ Logo\ Star.svg);
         } */
+
+
+        .leaflet-popup-content-wrapper,
+        .leaflet-popup-tip {
+            color: #333;
+            background: none;
+            box-shadow: none !important;
+            background-image: url(img/Popup.png);
+            background-repeat: no-repeat;
+            width: 524px;
+            height: 276px;
+        }
+
+        .leaflet-popup-content {
+            width: 530px !important;
+            height: 280px !important;
+        }
+
+        .pop {
+            display: flex;
+            flex-direction: column;
+            max-width: 458px;
+            padding: 10px 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            font-family: 'dragon';
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .pop-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -323,15 +368,17 @@
 
 
             const popupContent = `
-            <h1>${data.name}</h1>
-                <div class="type">
-                     <div><b style="text-transform: capitalize;">${data.type}</b></div>
-                     <div><b>${data.biome}</b></div>
+                <div class="pop">
+                    <div class="header">${data.name}</div>
+                    <div class="pop-content">
+                        <div><b style="text-transform: capitalize;">${data.type}</b></div>
+                        <div><b>${data.biome}</b></div>
+                    </div>
+                    <div class="pop-content">
+                        ${data.info}
+                    </div>
                 </div>
-                <div class="type">
-                    ${data.info}
-                </div>
-                `
+            `
             const unpCoords = coords.map(c => {
                 return rc.unproject([c.x, c.y])
             })
